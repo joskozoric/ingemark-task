@@ -1,0 +1,111 @@
+openapi: 3.0.3
+info:
+  title: Product API
+  version: 1.0.0
+  description: API for managing product entities.
+
+servers:
+  - url: /api/v1
+    description: Production Server
+
+paths:
+  /products:
+    post:
+      tags:
+        - Products
+      summary: Create a new product
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Product'
+      responses:
+        '201':
+          description: Product created successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Product'
+        '400':
+          description: Invalid input
+    get:
+      tags:
+        - Products
+      summary: Get a list of all products
+      parameters:
+        - in: query
+          name: is_available
+          schema:
+            type: boolean
+          description: Filter by availability status
+      responses:
+        '200':
+          description: A list of products
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Product'
+        '500':
+          description: Server error
+
+  /products/{code}:
+    get:
+      tags:
+        - Products
+      summary: Get a product by its unique code
+      parameters:
+        - in: path
+          name: code
+          schema:
+            type: string
+            pattern: '^[a-zA-Z0-9]{10}$' # Exactly 10 characters (alphanumeric)
+          required: true
+          description: Unique code of the product (exactly 10 characters)
+      responses:
+        '200':
+          description: The product details
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Product'
+        '404':
+          description: Product not found
+
+components:
+  schemas:
+    Product:
+      type: object
+      required:
+        - code
+        - name
+        - price_eur
+        - is_available
+      properties:
+        code:
+          type: string
+          description: Unique product code. Exactly 10 characters.
+          pattern: '^[a-zA-Z0-9]{10}$' # Exactly 10 characters (alphanumeric)
+          example: 'PROD123456'
+        name:
+          type: string
+          description: Name of the product.
+          example: 'Pants'
+        price_eur:
+          type: number
+          format: float
+          minimum: 0
+          description: Price in Euros (must be non-negative).
+          example: 999.99
+        price_usd:
+          type: number
+          format: float
+          minimum: 0
+          description: Price in US Dollars (must be non-negative).
+          example: 1080.50
+        is_available:
+          type: boolean
+          description: Availability status of the product.
+          example: true
