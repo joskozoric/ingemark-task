@@ -5,8 +5,8 @@ info:
   description: API for managing product entities.
 
 servers:
-  - url: /api/v1
-    description: Production Server
+  - url: http://localhost:8080
+    description: localhost dev
 
 paths:
   /products:
@@ -92,6 +92,7 @@ components:
         name:
           type: string
           description: Name of the product.
+          maxLength: 50
           example: 'Pants'
         price_eur:
           type: number
