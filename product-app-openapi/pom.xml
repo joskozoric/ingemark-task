@@ -24,6 +24,11 @@
             <artifactId>swagger-annotations</artifactId>
             <version>${swagger.core.version}</version>
         </dependency>
+        <dependency>
+            <groupId>io.swagger.core.v3</groupId>
+            <artifactId>swagger-models</artifactId>
+            <version>${swagger.core.version}</version>
+        </dependency>
     </dependencies>
 
     <build>
@@ -44,7 +49,7 @@
                             <output>${project.build.directory}/generated-sources</output>
                             <configOptions>
                                 <sourceFolder>src/main/java</sourceFolder>
-                                <interfaceOnly>true</interfaceOnly>
+                                <delegatePattern>true</delegatePattern>
                                 <apiPackage>com.ingemark.product_app.api</apiPackage>
                                 <basePackage>com.ingemark.product_app</basePackage>
                                 <invokerPackage>com.ingemark.product_app.api</invokerPackage>
