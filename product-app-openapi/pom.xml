@@ -7,7 +7,7 @@
     <parent>
         <groupId>com.ingemark</groupId>
         <artifactId>product-app</artifactId>
-        <version>1.0-SNAPSHOT</version>
+        <version>${revision}</version>
     </parent>
 
     <artifactId>product-app-openapi</artifactId>
@@ -51,8 +51,6 @@
                                 <sourceFolder>src/main/java</sourceFolder>
                                 <delegatePattern>true</delegatePattern>
                                 <apiPackage>com.ingemark.product_app.api</apiPackage>
-                                <basePackage>com.ingemark.product_app</basePackage>
-                                <invokerPackage>com.ingemark.product_app.api</invokerPackage>
                                 <modelPackage>com.ingemark.product_app.api.model</modelPackage>
                                 <useSpringBoot3>true</useSpringBoot3>
                                 <useTags>true</useTags>
