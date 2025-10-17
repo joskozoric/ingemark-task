@@ -55,11 +55,6 @@
                                 <useSpringBoot3>true</useSpringBoot3>
                                 <useTags>true</useTags>
                                 <generatedConstructorWithRequiredArgs>false</generatedConstructorWithRequiredArgs>
-                                <additionalModelTypeAnnotations>
-                                    @lombok.Builder
-                                    @lombok.AllArgsConstructor
-                                    @lombok.extern.jackson.Jacksonized
-                                </additionalModelTypeAnnotations>
                             </configOptions>
                         </configuration>
                     </execution>
