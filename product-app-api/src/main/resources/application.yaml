@@ -11,8 +11,17 @@ spring:
     hibernate:
       ddl-auto: create-drop
     show-sql: true
+  jackson:
+    default-property-inclusion: non_null
 
 server:
   port: 8080
   error:
     include-message: always
+
+external:
+  hnb:
+    refresh:
+      cron: 0 0 6 * * *
+    api:
+      url: https://api.hnb.hr/tecajn-eur/v3
