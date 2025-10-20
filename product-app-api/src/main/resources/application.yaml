@@ -1,20 +1,8 @@
 spring:
   application:
     name: product-api
-  security:
-    oauth2:
-      resourceserver:
-        jwt:
-          issuer-uri: http://localhost:8080/realms/idm
-  datasource:
-    url: jdbc:postgresql://localhost:5432/productdb
-    username: postgres
-    password: password
-    driver-class-name: org.postgresql.Driver
   jpa:
     database-platform: org.hibernate.dialect.PostgreSQLDialect
-    hibernate:
-      ddl-auto: create-drop
     show-sql: true
   jackson:
     default-property-inclusion: non_null

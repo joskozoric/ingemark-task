@@ -26,7 +26,7 @@ public class ProductService implements ProductsApiDelegate {
     public ResponseEntity<ProductDto> productsPost(ProductDto productDto) {
         try {
             Product productEntity = productRepository.save(productMapper.toEntity(productDto));
-            return new ResponseEntity<>(productMapper.toDto(productEntity), HttpStatus.OK);
+            return new ResponseEntity<>(productMapper.toDto(productEntity), HttpStatus.CREATED);
         } catch (DataIntegrityViolationException e) {
             if (e.getMessage().contains("product_code_key")){
                 throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Product with same code already exists");

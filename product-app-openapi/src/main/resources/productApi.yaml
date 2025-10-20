@@ -15,6 +15,7 @@ paths:
         - Products
       security:
         - oAuthPassword: [product_app_api:product.write]
+        - BasicAuth: []
       summary: Create a new product
       requestBody:
         required: true
@@ -36,6 +37,7 @@ paths:
         - Products
       security:
         - oAuthPassword: [product_app_api:product.read]
+        - BasicAuth: []
       summary: Get a list of all products
       parameters:
         - in: query
@@ -61,6 +63,7 @@ paths:
         - Products
       security:
         - oAuthPassword: [product_app_api:product.read]
+        - BasicAuth: []
       summary: Get a product by its unique code
       parameters:
         - in: path
@@ -118,12 +121,15 @@ components:
           example: true
 
   securitySchemes:
+    BasicAuth:
+      type: http
+      scheme: basic
+
     oAuthPassword:
       type: oauth2
       description: oauth2 keycloak authentication
       flows:
         password:
-#          authorizationUrl: http://localhost:8080/realms/idm/protocol/openid-connect/auth
           tokenUrl: http://localhost:8080/realms/idm/protocol/openid-connect/token
           scopes:
             product_app_api:product.read: Read product

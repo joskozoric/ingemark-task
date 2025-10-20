@@ -36,6 +36,10 @@ public class SpringDocOpenApiConfig {
                                                 )
                                         )
                                 )
+                                .addSecuritySchemes("BasicAuth", new SecurityScheme()
+                                        .type(SecurityScheme.Type.HTTP)
+                                        .scheme("basic")
+                                )
                 )
                 ;
     }
