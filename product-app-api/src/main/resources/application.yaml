@@ -1,6 +1,11 @@
 spring:
   application:
     name: product-api
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          issuer-uri: http://localhost:8080/realms/idm
   datasource:
     url: jdbc:postgresql://localhost:5432/productdb
     username: postgres
@@ -14,10 +19,20 @@ spring:
   jackson:
     default-property-inclusion: non_null
 
+springdoc:
+  api-docs:
+    enabled: true
+
 server:
-  port: 8080
+  port: 7777
   error:
     include-message: always
+
+logging:
+  level:
+    org:
+      springframework:
+        security: TRACE
 
 external:
   hnb:

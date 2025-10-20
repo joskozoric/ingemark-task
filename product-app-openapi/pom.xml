@@ -50,6 +50,7 @@
                             <configOptions>
                                 <sourceFolder>src/main/java</sourceFolder>
                                 <delegatePattern>true</delegatePattern>
+                                <useSwaggerUI>true</useSwaggerUI>
                                 <apiPackage>com.ingemark.product_app.api</apiPackage>
                                 <modelPackage>com.ingemark.product_app.api.model</modelPackage>
                                 <useSpringBoot3>true</useSpringBoot3>
