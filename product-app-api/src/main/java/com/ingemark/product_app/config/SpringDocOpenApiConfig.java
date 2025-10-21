@@ -7,10 +7,13 @@ import io.swagger.v3.oas.models.security.OAuthFlow;
 import io.swagger.v3.oas.models.security.OAuthFlows;
 import io.swagger.v3.oas.models.security.Scopes;
 import io.swagger.v3.oas.models.security.SecurityScheme;
+import org.openapitools.configuration.HomeController;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.Import;
 
 @Configuration
+@Import(HomeController.class)
 public class SpringDocOpenApiConfig {
 
     @Bean(name = "com.ingemark.product_app.config.SpringDocConfiguration.apiInfo")
