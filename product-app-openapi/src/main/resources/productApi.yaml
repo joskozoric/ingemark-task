@@ -129,8 +129,8 @@ components:
       type: oauth2
       description: oauth2 keycloak authentication
       flows:
-        password:
-          tokenUrl: http://localhost:8080/realms/idm/protocol/openid-connect/token
+        implicit:
+          authorizationUrl: http://localhost:8080/realms/product/protocol/openid-connect/auth
           scopes:
             product_app_api:product.read: Read product
             product_app_api:product.write: Write product
