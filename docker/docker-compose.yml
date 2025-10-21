@@ -14,7 +14,7 @@ services:
     ports:
       - "5432:5432"
     healthcheck:
-      test: ["CMD-SHELL", "pg_isready -U postgres_admin -d keycloakdb"]
+      test: ["CMD-SHELL", "pg_isready -U postgres -d keycloakdb"]
       interval: 5s
       timeout: 5s
       retries: 5
@@ -25,8 +25,8 @@ services:
     container_name: keycloak
     restart: always
     environment:
-      KEYCLOAK_ADMIN: admin
-      KEYCLOAK_ADMIN_PASSWORD: adminpassword
+      KEYCLOAK_ADMIN: keycloak
+      KEYCLOAK_ADMIN_PASSWORD: keycloak
 
       KC_DB: postgres
       KC_DB_URL: jdbc:postgresql://product-db:5432/keycloakdb
@@ -35,8 +35,6 @@ services:
 
       KC_DB_SCHEMA: public
       KC_HTTP_ENABLED: true
-      KC_HTTPS_CERTIFICATE_FILE: /opt/keycloak/conf/server.crt
-      KC_HTTPS_CERTIFICATE_KEY_FILE: /opt/keycloak/conf/server.key
       KC_HOSTNAME_STRICT: false
       KC_HOSTNAME_URL: http://localhost:8080
       KC_HOSTNAME_ADMIN_URL: http://localhost:8080
