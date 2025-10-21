@@ -1,0 +1,47 @@
+{
+  "request": {
+    "method": "GET",
+    "urlPath": "/tecajn-eur/v3"
+  },
+  "response": {
+    "status": 200,
+    "headers": {
+      "Content-Type": "application/json"
+    },
+    "jsonBody": [
+      {
+        "broj_tecajnice": "206",
+        "datum_primjene": "2025-10-21",
+        "drzava": "SAD",
+        "drzava_iso": "USA",
+        "kupovni_tecaj": "1,167200",
+        "prodajni_tecaj": "1,163800",
+        "sifra_valute": "840",
+        "srednji_tecaj": "1,165500",
+        "valuta": "USD"
+      },
+      {
+        "broj_tecajnice": "206",
+        "datum_primjene": "2025-10-21",
+        "drzava": "Australija",
+        "drzava_iso": "AUS",
+        "kupovni_tecaj": "1,799200",
+        "prodajni_tecaj": "1,793800",
+        "sifra_valute": "036",
+        "srednji_tecaj": "1,796500",
+        "valuta": "AUD"
+      },
+      {
+        "broj_tecajnice": "206",
+        "datum_primjene": "2025-10-21",
+        "drzava": "Velika Britanija",
+        "drzava_iso": "GBR",
+        "kupovni_tecaj": "0,870400",
+        "prodajni_tecaj": "0,867800",
+        "sifra_valute": "826",
+        "srednji_tecaj": "0,869100",
+        "valuta": "GBP"
+      }
+    ]
+  }
+}

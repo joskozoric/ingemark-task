@@ -1,0 +1,25 @@
+spring:
+  datasource:
+    url: jdbc:h2:mem:productdb;MODE=PostgreSQL;DB_CLOSE_DELAY=-1
+    driver-class-name: org.h2.Driver
+    username: sa
+    password: ''
+
+  jpa:
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+    show-sql: true
+    hibernate:
+      ddl-auto: none
+
+  flyway:
+    enabled: true
+#    schemas: public
+#    locations: [ 'classpath:test/resources/db/migration/postgresql' ]
+
+external:
+  hnb:
+    api:
+      url: ${wiremock.url}/tecajn-eur/v3
+
+wiremock:
+  url: http://localhost:5555
