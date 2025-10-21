@@ -17,7 +17,7 @@ import org.springframework.security.web.SecurityFilterChain;
 
 @Configuration
 @EnableWebSecurity
-@Profile("local-no-docker")
+@Profile("local-no-docker | test")
 public class BasicAuthSecurityConfig {
     @Bean
     public SecurityFilterChain basicAuthFilterCHain(HttpSecurity http) throws Exception {
