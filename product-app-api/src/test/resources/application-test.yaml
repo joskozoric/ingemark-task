@@ -13,8 +13,6 @@ spring:
 
   flyway:
     enabled: true
-#    schemas: public
-#    locations: [ 'classpath:test/resources/db/migration/postgresql' ]
 
 external:
   hnb:

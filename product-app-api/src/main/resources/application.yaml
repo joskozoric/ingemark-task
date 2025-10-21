@@ -12,6 +12,8 @@ springdoc:
 
 server:
   port: 7777
+  error:
+    include-message: on_param
 
 logging:
   level:
