@@ -42,14 +42,12 @@ class ProductServiceTest {
 
     @BeforeEach
     void setUp() {
-        // Setup DTO for input
         testProductDto = new ProductDto();
         testProductDto.setCode("ABC1234567");
         testProductDto.setName("Test Product");
         testProductDto.setPriceEur(99.99f);
         testProductDto.setIsAvailable(true);
 
-        // Setup Entity for output (simulating the saved object)
         testProductEntity = new Product();
         testProductEntity.setId(1L);
         testProductEntity.setCode("ABC1234567");
