@@ -13,3 +13,12 @@ spring:
     console:
       enabled: true
       path: /h2-console
+
+server:
+  error:
+    include-message: always
+
+external:
+  hnb:
+    refresh:
+      cron: 0 */5 * * * *

@@ -2,7 +2,6 @@ spring:
   application:
     name: product-api
   jpa:
-    database-platform: org.hibernate.dialect.PostgreSQLDialect
     show-sql: true
   jackson:
     default-property-inclusion: non_null
@@ -13,8 +12,6 @@ springdoc:
 
 server:
   port: 7777
-  error:
-    include-message: always
 
 logging:
   level:
